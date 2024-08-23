@@ -37,160 +37,54 @@ Running The Emulator (emu8086) Intro 8086 Microprocessor Emulator, also known as
 
 ## Addition  of 8 bit ALP:
 ```
-org 100h  
-
-mov al, 25h    
-mov bl, 13h    
-add al, bl     
-mov [2375h], al
-
-ret            
+start:
+MOV AX,06
+MOV BX,03
+ADD AX,BX
+HLT  
 ```
 ## OUTPUT: 
-![add](https://github.com/user-attachments/assets/9ea6d67d-0199-40bc-815e-a4feaab54ad3)
+![image](https://github.com/user-attachments/assets/a3083aef-b5ab-4aff-b3de-770016dc5476)
+
 
 
 ## Subtraction  of 8 bit numbers  ALP:
 ```
-org 100h
-
-mov al, 25h    
-mov bl, 13h    
-sub al, bl     
-mov [0009h], al 
-
-ret
+start:
+MOV AX,06
+MOV BX,03
+SUB AX,BX
+HLT
 ```
 ## OUTPUT:
-![sub](https://github.com/user-attachments/assets/9c4316ab-c006-439e-bf19-330e6ee847fd)
+![image](https://github.com/user-attachments/assets/d5d0e490-35f4-4078-83d4-1568e1a23993)
+
 
 
 ## Multiplication ALP:
 ```
-org 100h
-
-mov ax, 4101h  
-mov [6000h], ax
-mov bx, 2218h  
-mov ax, [6000h]
-mul bx         
-
-mov [5008h], ax
-
-
-ret
+start:
+MOV AX,06
+MOV BX,03
+MUL BX
+HLT
 ```
 ## OUTPUT:
-![mul](https://github.com/user-attachments/assets/c0319816-0d3a-4a0c-be51-14ffaf78f693)
+![image](https://github.com/user-attachments/assets/4fabb2f7-17fe-4526-97e3-491e2e77b1ce)
+
 
 
 ## Division ALP:
 ```
-org 100h            
-
-mov ax, 0b161h      
-mov dx, 0           
-
-mov [2000h], 0a415h 
-mov bx, [2000h]     
-div bx              
-
-mov [1121h], ax     
-
-ret                 
+start:
+MOV AX,06
+MOV BX,03
+DIV BX
+HLT
 ```
 ## OUTPUT:
-![div](https://github.com/user-attachments/assets/631da9cc-78b9-4772-a950-b90492a880e7)
+![image](https://github.com/user-attachments/assets/af69f06f-defd-4151-8b25-ac0bb1d48e4e)
 
-## LOGICAL OPERATIONS:
-### OR ALP:
-```
-org 100h
-
-mov ax, 0A23h
-mov si, 0b13h
-or ax, si
-
-
-ret
-```
-### OUTPUT:
-![or](https://github.com/user-attachments/assets/85528a19-bee2-4cd8-bc4e-5cbf296714e7)
-
-### AND ALP:
-```
-org 100h
-
-mov di, 0532h 
-mov cx, 0A23h
-mov dx, 0b13h
-and cx, dx   
-mov [0007h], cx
-
-ret
-```
-### OUTPUT:
-![and](https://github.com/user-attachments/assets/11e114c4-18f4-4e4c-b0da-559f7db33d69)
-
-### NOT ALP:
-```
-org 100h
-
-mov ax, 0A32h  
-not ax         
-               
-mov [0008h], ax
-
-ret
-```
-### OUTPUT:
-![not](https://github.com/user-attachments/assets/1a94e005-7542-4deb-8fc4-8a0d780613c2)
-
-
-### NAND ALP:
-```
-org 100h 
-
-mov ax, 0A32h  
-mov bx, 0B13h  
-and ax, bx     
-not ax         
-mov [0008h], ax
-
-
-ret
-```
-### OUTPUT:
-![nand](https://github.com/user-attachments/assets/234913d3-02a8-438b-933f-1b4d072abd09)
-
-### NOR ALP:
-```
-org 100h
-
-mov ax, 0A45h  
-mov bx, 0C30h  
-or ax, bx      
-not ax         
-mov [0020h], ax
-
-ret
-```
-### OUTPUT:
-![nor](https://github.com/user-attachments/assets/1fad837e-d99e-4b50-a8ac-bc5190bb9016)
-
-### XOR ALP:
-```
-org 100h
-mov ax, 0A32h  
-mov bx, 0B13h  
-xor ax, bx     
-               
-mov [0028h], ax
-
-ret
-```
-### OUTPUT:
-![xor](https://github.com/user-attachments/assets/fce635d7-3977-4aa4-a309-e2c4e9d8b9e8)
 
 ## Result :
 Thus, Assembly Language Program for fundamental arithmetic and logical operations are exected succesfully.
